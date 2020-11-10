@@ -1,35 +1,24 @@
-let CACHE_NAME = "website";
-let urlsToCache = [
-  "/static/js/bundle.ts",
-  "/static/js/main.chunk.ts",
-  "/static/js/1.chunk.ts",
-  "index.html",
-  "/",
-];
+let CacheFiles = "PWA";
 
-self.addEventListener("install", function (event) {
-  // Perform install steps
-  event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then(function (cache) {
-        console.log("Opened cache");
-        return cache.addAll(urlsToCache);
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-  );
-});
+this.addEventListener("install", (event)=>{
+    event.waitUntill(
+        caches.open(CacheFiles).then((cache)=>{
+            cache.addAll([
+                'static/js/bundle.js',
+                'static/js/0.chunk.js',
+                'static/js/main.chunk.js',
+                "https://fonts.googleapis.com/css2?family=Poppins&display=swap",
+                'index.html',
+                '/'
+            ]);
+        })
+    )
+})
 
-self.addEventListener("fetch", function (event) {
-  event.respondWith(
-    caches.match(event.request).then(function (response) {
-      // Cache hit - return response
-      if (response) {
-        return response;
-      }
-      return fetch(event.request);
-    })
-  );
-});
+this.addEventListener("fetch", (event)=>{
+    event.respondWith(
+        caches.match(event.request).then((result)=>{
+            return result;
+        })
+    )
+})
