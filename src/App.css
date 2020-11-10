@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+.heading{
+    text-align: center;
+    font-weight: bolder;
+}
+.balance{
+    background-color: #2980b9;
+    width:300px;
+    height: 130px;
+    border-radius: 20px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.i-e{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top:-40px;
+    text-align: center;
+    
+}
+.i-e h5{
+    margin:0;
+    padding:0;
+}
+
+.i-box{
+    padding-top:15px;
+}
+
+.income{
+    background-color: #2ecc71;
+    width: 140px;
+    height: 80px;
+    border-radius: 20px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.expense{
+    background-color: #e74c3c;
+    width: 140px;
+    height: 80px;
+    border-radius: 20px;
+    box-shadow: 0 8px 6px -6px black;
+}
+.balance-heading{
+    color:#ffff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top:10px;
+}
+.balance-amount{
+    color:#ffff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    text-align: center;
+}
+.summary-heading{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding:5px;
+    text-align: center;
+    background-color: #2980b9;
+    color:#ffff;
+    box-shadow: 0 8px 6px -6px black;
+}
+.summary{
+    margin-top:10px;
+}
+
+.history-ul{
+    list-style: none;
+}
+.history-ul li{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-transform: uppercase;
+    border: 1px solid #95a5a6;
+    padding:4px;
+    margin-top:6px;
+    margin-bottom: 6px;
+}
+.transaction{
+    margin-top:10px;
+}
+.transaction-heading{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding:5px;
+    text-align: center;
+    background-color: #2980b9;
+    color:#ffff;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.transaction form{
+    display: flex;
+    flex-direction: column;
+    margin-top:10px;
+}
+
+.transaction form input{
+    margin-top:5px;
+    margin-bottom: 5px;
+    border:1px solid black;
+    text-indent: 5px;
+    padding-top:3px;
+    padding-bottom: 3px;
+}
+.transaction form button{
+    height: 35px;
+    border:none;
+    outline:none;
+    background-color:#f39c12;
+    color: #ffff;
+    font-weight: bolder;
+    transition: 0.3s;
+}
+.transaction form button:hover{
+    background-color: #2980b9;
+}
+
+.delete-btn {
+    cursor: pointer;
+    background-color: #e74c3c;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 2px 5px;
+    opacity: 1;
+    position: absolute;
+    left:-22px;
+    transition: opacity 0.3s ease;
+  }
+
+  .history-ul li:hover .delete-btn{
+      opacity: 1;
+  }
+
+
+/* box-shadow: 0 8px 6px -6px black; */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
