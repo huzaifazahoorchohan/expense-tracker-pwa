@@ -1,14 +1,14 @@
 let CacheFiles = "PWA";
 
 this.addEventListener("install", (event)=>{
-    event.waitUntill(
+    event.waitUntil(
         caches.open(CacheFiles).then((cache)=>{
             cache.addAll([
                 'static/js/bundle.js',
                 'static/js/0.chunk.js',
                 'static/js/main.chunk.js',
-                "https://fonts.googleapis.com/css2?family=Poppins&display=swap",
                 'index.html',
+                'favicon.ico',
                 '/'
             ]);
         })
@@ -16,9 +16,11 @@ this.addEventListener("install", (event)=>{
 })
 
 this.addEventListener("fetch", (event)=>{
-    event.respondWith(
-        caches.match(event.request).then((result)=>{
-            return result;
-        })
-    )
+    if (!navigator.onLine){
+        event.respondWith(
+            caches.match(event.request).then((result)=>{
+                return result;
+            })
+        )
+    }
 })
