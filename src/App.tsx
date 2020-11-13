@@ -19,5 +19,4 @@ const App: React.FC = () => {
     </TransactionProvide>
   )
 };
-
 export default App;
