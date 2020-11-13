@@ -9,6 +9,7 @@ this.addEventListener("install", (event)=>{
                 'static/js/main.chunk.js',
                 'index.html',
                 'favicon.ico',
+                'manifest.json',
                 '/'
             ]);
         })
